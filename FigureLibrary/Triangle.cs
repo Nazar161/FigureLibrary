@@ -30,4 +30,12 @@ public class Triangle : Figure
         return Math.Sqrt(semiPerimeter * (semiPerimeter - _sideA) * (semiPerimeter - _sideB) *
                          (semiPerimeter - _sideC));
     }
+
+    public bool IsRightAngledTriangle()
+    {
+        List<double> sides = [_sideA, _sideB, _sideC];
+        sides.Sort();
+
+        return Math.Abs(Math.Pow(sides[0], 2) + Math.Pow(sides[1], 2) - Math.Pow(sides[2], 2)) < 0.00001;
+    }
 }

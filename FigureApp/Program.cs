@@ -25,5 +25,9 @@ class Program
         Triangle triangle = new Triangle(3.0, 4.0, 5.0);
         double triangleArea = figureService.GetArea(triangle);
         Console.WriteLine($"Площадь треугольника: {triangleArea}");
+        if (triangle.IsRightAngledTriangle())
+        {
+            Console.WriteLine($"Треугольник является прямоугольным");
+        }
     }
 }
